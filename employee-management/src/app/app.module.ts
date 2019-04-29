@@ -13,9 +13,6 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { BasicAuthHttpInterceptorService } from './service/basic-auth-http-interceptor.service';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input'; 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +27,7 @@ import {MatInputModule} from '@angular/material/input';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatInputModule
-  ],
-  exports: [
-    MatInputModule
+    FormsModule
   ],
   providers: [
     {
