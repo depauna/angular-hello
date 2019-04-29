@@ -11,5 +11,5 @@ WORKDIR /natand/
 RUN ./build.sh
 
 FROM depauna/apache:latest
-COPY --from=builder /natand/dist/ /var/www/html/
+COPY --from=builder /natand/dist/employee-management /var/www/html/
 CMD httpd -X
