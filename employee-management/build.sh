@@ -4,5 +4,5 @@ set -eo pipefail
 export PATH=$PWD/node_modules/.bin/:$PATH
 node -v
 npm -v
-nvm use v10.12.0
+nvm use v10.15.3
 npm run build
