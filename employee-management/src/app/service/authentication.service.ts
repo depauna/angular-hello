@@ -17,7 +17,7 @@ export class AuthenticationService {
 
   constructor(
     private httpClient: HttpClient
-  ) { 
+  ) {
     this.apiUrl = environment.apiUrl;
   }
 
@@ -30,7 +30,7 @@ export class AuthenticationService {
         userData => {
           sessionStorage.setItem('username', username);
           let authString = 'Basic ' + btoa(username + ':' + password);
-          sessionStorage.setItem('basicauth', authString)
+          sessionStorage.setItem('basicauth', authString);
           return userData;
         }
       )
@@ -44,12 +44,12 @@ export class AuthenticationService {
   }
 
   isLoggedIn() {
-    let user = sessionStorage.getItem('username')
-    console.log(!(user === null))
-    return !(user === null)
+    let user = sessionStorage.getItem('username');
+    console.log(!(user === null));
+    return !(user === null);
   }
 
   logOut() {
-    sessionStorage.removeItem('username')
+    sessionStorage.removeItem('username');
   }
 }
