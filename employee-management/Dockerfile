@@ -8,6 +8,7 @@ RUN ./install.sh
 FROM preparedbuilder as builder
 ADD . /natand/
 WORKDIR /natand/
+ENV APIURL="http://kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com/depaunabackend"
 RUN ./build.sh
 
 FROM depauna/apache:latest

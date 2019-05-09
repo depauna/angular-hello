@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://backend.mycluster'
+  apiUrl: process.env.APIURL
 };
