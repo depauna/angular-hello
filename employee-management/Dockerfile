@@ -2,7 +2,7 @@ FROM depauna/nvm:latest as preparedbuilder
 ADD package.json employee-management/
 ADD package-lock.json employee-management/
 ADD install.sh employee-management/install.sh
-WORKDIR employee-management
+WORKDIR /employee-management
 RUN ./install.sh
 
 FROM preparedbuilder as builder
