@@ -8,8 +8,8 @@ RUN ./install.sh
 FROM preparedbuilder as builder
 ADD . /employee-management/
 WORKDIR /employee-management/
-ENV APIURL="http://kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com/depaunabackend"
-RUN ./build.sh
+ENV APIURL="https://kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com/depaunabackend"
+RUN ./build.sh depaunafrontend
 
 FROM depauna/apache:latest
 COPY --from=builder /employee-management/dist/employee-management /var/www/html/depaunafrontend
