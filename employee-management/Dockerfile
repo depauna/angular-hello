@@ -8,9 +8,9 @@ RUN ./install.sh
 FROM preparedbuilder as builder
 ADD . /employee-management/
 WORKDIR /employee-management/
-ENV APIURL="https://kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com/<username>backend"
-RUN ./build.sh <username>frontend
+ENV APIURL="https://kubernetes-elb-depauna-127443764.eu-west-1.elb.amazonaws.com/user30backend"
+RUN ./build.sh user30frontend
 
 FROM depauna/apache:latest
-COPY --from=builder /employee-management/dist/employee-management /var/www/html/<username>frontend
+COPY --from=builder /employee-management/dist/employee-management /var/www/html/user30frontend
 CMD httpd -X
