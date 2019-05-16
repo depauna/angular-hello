@@ -3,7 +3,7 @@ pipeline {
   environment {
     dockerhub_username = 'depauna'
     img_name = 'angular-hello'
-    img_tag = get_commithash()
+    img_tag = env.BUILD_NUMBER
     namespace = 'depauna'
   }
   stages {
@@ -38,6 +38,6 @@ pipeline {
   }
 }
 
-def get_commithash() {
-  return sh 'git log -1 --pretty=%h'
-}
+//def get_commithash() {
+//  return sh 'git log -1 --pretty=%h'
+//}
