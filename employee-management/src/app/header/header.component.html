@@ -4,7 +4,7 @@
     
     <ul class="navbar-nav">
        
-      <li><a *ngIf="loginService.isLoggedIn()" routerLink="/" class="nav-link">Get all the Employees</a></li>
+      <li><a *ngIf="loginService.isLoggedIn()" routerLink="/" class="nav-link">Employees</a></li>
       <li><a *ngIf="loginService.isLoggedIn()" routerLink="/addemployee" class="nav-link">Add Employee</a></li>
       <li><a *ngIf="!loginService.isLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
       <li><a *ngIf="loginService.isLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
