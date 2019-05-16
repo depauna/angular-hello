@@ -1,10 +1,11 @@
-def dockerhub_username = 'depauna'
-def img_name = 'angular-hello'
-def img_tag = env.BUILD_NUMBER
-def namespace = 'depauna'
-
 pipeline {
   agent any
+  environment {
+    dockerhub_username = 'depauna'
+    img_name = 'angular-hello'
+    img_tag = get_commithash()
+    namespace = 'depauna'
+  }
   stages {
     stage('Build') {
       steps {
@@ -30,9 +31,15 @@ pipeline {
       steps {
         sh """
           cd employee-management/
-          helm upgrade --wait --install -f user30-frontend.yaml --namespace user30 --tiller-namespace user30 user30-employee-management-frontend ../../kubemania/employee-management-frontend/
+          helm upgrade --wait --install -f user30-frontend.yaml --set image=${img_tag} --namespace user30 --tiller-namespace user30 user30-employee-management-frontend ../../kubemania/employee-management-frontend/
         """
       }
     }
   }
+}
+
+def get_commithash() {
+    node('master') {
+        return sh 'git log -1 --pretty=%h'
+    }
 }
