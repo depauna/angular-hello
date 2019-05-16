@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: depauna/employee-management-angular
+  repository: depauna/angular-hello
   tag: latest
   pullPolicy: Always
 
