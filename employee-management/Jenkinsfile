@@ -3,7 +3,7 @@ pipeline {
   environment {
     dockerhub_username = 'depauna'
     img_name = 'angular-hello'
-    img_tag = env.BUILD_NUMBER
+    img_tag = 'env.BUILD_NUMBER'
     namespace = 'depauna'
   }
   stages {
