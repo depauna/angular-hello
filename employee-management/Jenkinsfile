@@ -39,7 +39,5 @@ pipeline {
 }
 
 def get_commithash() {
-    node('master') {
-        return sh "git log -1 --pretty=%h"
-    }
+  return sh 'git log -1 --pretty=%h'
 }
