@@ -3,7 +3,8 @@ pipeline {
   environment {
     dockerhub_username = 'depauna'
     img_name = 'angular-hello'
-    img_tag = 'env.BUILD_NUMBER'
+//    img_tag = '$BUILD_NUMBER'
+    img_tag = sh (returnStdout: true, script: 'git log -1 --pretty=%h')
     namespace = 'depauna'
   }
   stages {
