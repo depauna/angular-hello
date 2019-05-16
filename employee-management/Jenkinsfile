@@ -1,6 +1,6 @@
 def dockerhub_username = 'depauna'
 def img_name = 'angular-hello'
-def img_tag = ${BUILD_NUMBER}
+def img_tag = env.BUILD_NUMBER
 def namespace = 'depauna'
 
 pipeline {
