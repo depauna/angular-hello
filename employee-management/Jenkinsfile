@@ -3,7 +3,6 @@ pipeline {
   environment {
     dockerhub_username = 'depauna'
     img_name = 'angular-hello'
-//    img_tag = '$BUILD_NUMBER'
     img_tag = sh (returnStdout: true, script: 'git log -1 --pretty=%h')
     namespace = 'depauna'
   }
@@ -32,7 +31,7 @@ pipeline {
       steps {
         sh """
           cd employee-management/
-          helm upgrade --wait --install -f user30-frontend.yaml --set image=${img_tag} --namespace user30 --tiller-namespace user30 user30-employee-management-frontend ../../kubemania/employee-management-frontend/
+          helm upgrade --wait --install -f user30-frontend.yaml --set image.tag=${img_tag} --namespace user30 --tiller-namespace user30 user30-employee-management-frontend ../../kubemania/employee-management-frontend/
         """
       }
     }
