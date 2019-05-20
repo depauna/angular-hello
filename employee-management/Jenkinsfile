@@ -33,7 +33,7 @@ pipeline {
 //          cd employee-management/
 //          helm upgrade --wait --install -f ${username}-frontend.yaml --set image.tag=${img_tag} --namespace ${username} --tiller-namespace ${username} ${username}-employee-management-frontend ../../kubemania/employee-management-frontend/
 //        """
-      }
-    }
+//      }
+//    }
   }
 }
